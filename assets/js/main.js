@@ -1,6 +1,6 @@
 /**
- * Template Name: iPortfolio
- * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+ * Template Name: iprojects
+ * Template URL: https://bootstrapmade.com/iprojects-bootstrap-projects-websites-template/
  * Updated: Mar 17 2024 with Bootstrap v5.3.3
  * Author: BootstrapMade.com
  * License: https://bootstrapmade.com/license/
@@ -172,28 +172,28 @@
    * Porfolio isotope and filter
    */
   window.addEventListener("load", () => {
-    let portfolioContainer = select(".portfolio-container");
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: ".portfolio-item",
+    let projectsContainer = select(".projects-container");
+    if (projectsContainer) {
+      let projectsIsotope = new Isotope(projectsContainer, {
+        itemSelector: ".projects-item",
       });
 
-      let portfolioFilters = select("#portfolio-flters li", true);
+      let projectsFilters = select("#projects-flters li", true);
 
       on(
         "click",
-        "#portfolio-flters li",
+        "#projects-flters li",
         function (e) {
           e.preventDefault();
-          portfolioFilters.forEach(function (el) {
+          projectsFilters.forEach(function (el) {
             el.classList.remove("filter-active");
           });
           this.classList.add("filter-active");
 
-          portfolioIsotope.arrange({
+          projectsIsotope.arrange({
             filter: this.getAttribute("data-filter"),
           });
-          portfolioIsotope.on("arrangeComplete", function () {
+          projectsIsotope.on("arrangeComplete", function () {
             AOS.refresh();
           });
         },
@@ -203,10 +203,10 @@
   });
 
   /**
-   * Initiate portfolio lightbox
+   * Initiate projects lightbox
    */
-  const portfolioLightbox = GLightbox({
-    selector: ".portfolio-lightbox",
+  const projectsLightbox = GLightbox({
+    selector: ".projects-lightbox",
     plyr: {
       config: {
         ratio: "16:9", // or '4:3'
@@ -223,9 +223,9 @@
   });
 
   /**
-   * Portfolio details slider
+   * projects details slider
    */
-  new Swiper(".portfolio-details-slider", {
+  new Swiper(".projects-details-slider", {
     speed: 400,
     loop: true,
     autoplay: {
