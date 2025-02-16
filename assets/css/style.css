@@ -284,6 +284,12 @@ h6 {
   border-bottom: 3px solid #149ddd;
 }
 
+@media (min-width: 1199px) {
+  #hero{
+    padding-left: 300px;
+  }
+}
+
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
